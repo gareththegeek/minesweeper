@@ -1,0 +1,35 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://sprites/button.png" type="Texture" id=1]
+[ext_resource path="res://Cell.cs" type="Script" id=2]
+[ext_resource path="res://sprites/1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/bomb.png" type="Texture" id=4]
+[ext_resource path="res://sprites/5.png" type="Texture" id=5]
+[ext_resource path="res://sprites/3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/6.png" type="Texture" id=7]
+[ext_resource path="res://sprites/7.png" type="Texture" id=8]
+[ext_resource path="res://sprites/2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/4.png" type="Texture" id=10]
+[ext_resource path="res://sprites/8.png" type="Texture" id=11]
+[ext_resource path="res://sprites/flag.png" type="Texture" id=12]
+[ext_resource path="res://sprites/blownbomb.png" type="Texture" id=13]
+[ext_resource path="res://sprites/empty.png" type="Texture" id=14]
+[ext_resource path="res://sprites/falseflag.png" type="Texture" id=15]
+
+[node name="Cell" type="TextureButton"]
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+buttonTexture = ExtResource( 1 )
+clearedTexture = ExtResource( 14 )
+bombTexture = ExtResource( 4 )
+blownTexture = ExtResource( 13 )
+flagTexture = ExtResource( 12 )
+oneTexture = ExtResource( 3 )
+twoTexture = ExtResource( 9 )
+threeTexture = ExtResource( 6 )
+fourTexture = ExtResource( 10 )
+fiveTexture = ExtResource( 5 )
+sixTexture = ExtResource( 7 )
+sevenTexture = ExtResource( 8 )
+eightTexture = ExtResource( 11 )
+falseFlagTexture = ExtResource( 15 )

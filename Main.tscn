@@ -1,0 +1,131 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Grid.cs" type="Script" id=1]
+[ext_resource path="res://Main.cs" type="Script" id=2]
+[ext_resource path="res://sprites/face.png" type="Texture" id=3]
+[ext_resource path="res://BombsLabel.cs" type="Script" id=4]
+[ext_resource path="res://NewGameButton.cs" type="Script" id=5]
+[ext_resource path="res://sprites/oface.png" type="Texture" id=6]
+[ext_resource path="res://sprites/deadfacet.png" type="Texture" id=7]
+[ext_resource path="res://sprites/cool.png" type="Texture" id=8]
+[ext_resource path="res://TimeLabel.cs" type="Script" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[node name="Root" type="Node"]
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+
+[node name="Left" type="Control" parent="VBoxContainer/Panel/HBoxContainer"]
+margin_right = 386.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Panel/HBoxContainer/Left"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -11.0
+margin_right = 40.0
+margin_bottom = 11.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="Bombs" type="Label" parent="VBoxContainer/Panel/HBoxContainer/Left/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+size_flags_horizontal = 4
+text = "000"
+align = 1
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="VBoxContainer/Panel/HBoxContainer"]
+margin_left = 390.0
+margin_right = 390.0
+margin_bottom = 40.0
+
+[node name="NewGame" type="TextureButton" parent="VBoxContainer/Panel/HBoxContainer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 32, 32 )
+texture_normal = ExtResource( 3 )
+script = ExtResource( 5 )
+normalTexture = ExtResource( 3 )
+scaredTexture = ExtResource( 6 )
+deadTexture = ExtResource( 7 )
+coolTexture = ExtResource( 8 )
+
+[node name="Right" type="Control" parent="VBoxContainer/Panel/HBoxContainer"]
+margin_left = 394.0
+margin_right = 780.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Panel/HBoxContainer/Right"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -10.5
+margin_bottom = 10.5
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="Time" type="Label" parent="VBoxContainer/Panel/HBoxContainer/Right/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+size_flags_horizontal = 5
+text = "000"
+align = 1
+script = ExtResource( 9 )
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 44.0
+margin_right = 800.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
+margin_left = 400.0
+margin_top = 278.0
+margin_right = 400.0
+margin_bottom = 278.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+script = ExtResource( 1 )
+cellSceneFile = "res://Cell.tscn"
